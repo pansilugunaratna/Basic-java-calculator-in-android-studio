@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Addition.class);
         //Send output value as argument of string type
         intent.putExtra("outputVal1", String.valueOf(toParse));
+        intent.putExtra("val1",input_1.getText().toString());
+        intent.putExtra("val2",input_2.getText().toString());
         startActivity(intent);
     }
 
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Subtraction.class);
         //Send output value as argument of string type
         intent.putExtra("outputVal2", String.valueOf(toParse));
+        intent.putExtra("val1",input_1.getText().toString());
+        intent.putExtra("val2",input_2.getText().toString());
         startActivity(intent);
     }
 
