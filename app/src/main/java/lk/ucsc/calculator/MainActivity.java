@@ -35,21 +35,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     //Read inputs, add them and direct the output value to addition page
     public void gotoAdd() {
         EditText input_1 = findViewById(R.id.input_1);
         EditText input_2 = findViewById(R.id.input_2);
 
-        //Convert inputs to integer type
-        int in1 = Integer.parseInt(String.valueOf(input_1.getText()));
-        int in2 = Integer.parseInt(String.valueOf(input_2.getText()));
-        int toParse = in1 + in2;
         Intent intent = new Intent(this, Addition.class);
         //Send output value as argument of string type
-        intent.putExtra("outputVal1", String.valueOf(toParse));
-        intent.putExtra("val1",input_1.getText().toString());
-        intent.putExtra("val2",input_2.getText().toString());
+        intent.putExtra("val1", input_1.getText().toString());
+        intent.putExtra("val2", input_2.getText().toString());
         startActivity(intent);
     }
 
@@ -58,15 +52,10 @@ public class MainActivity extends AppCompatActivity {
         EditText input_1 = findViewById(R.id.input_1);
         EditText input_2 = findViewById(R.id.input_2);
 
-        //Convert inputs to integer type
-        int in1 = Integer.parseInt(String.valueOf(input_1.getText()));
-        int in2 = Integer.parseInt(String.valueOf(input_2.getText()));
-        int toParse = in1 - in2;
         Intent intent = new Intent(this, Subtraction.class);
         //Send output value as argument of string type
-        intent.putExtra("outputVal2", String.valueOf(toParse));
-        intent.putExtra("val1",input_1.getText().toString());
-        intent.putExtra("val2",input_2.getText().toString());
+        intent.putExtra("val1", input_1.getText().toString());
+        intent.putExtra("val2", input_2.getText().toString());
         startActivity(intent);
     }
 

@@ -14,13 +14,19 @@ public class Addition extends AppCompatActivity {
         setContentView(R.layout.activity_addition);
 
         //Get the value from the main page and declare as a string variable
-        String dataString = getIntent().getStringExtra("outputVal1");
         String val1 = getIntent().getStringExtra("val1");
         String val2 = getIntent().getStringExtra("val2");
+
+        //Take inputs as integers,do operation and display output
+        int in1 = Integer.parseInt(String.valueOf(val1));
+        int in2 = Integer.parseInt(String.valueOf(val2));
+        int addOutputInt = in1 + in2 ;
+        String dataString = String.valueOf(addOutputInt);
+
         TextView val_1 = findViewById(R.id.val1);
         TextView val_2 = findViewById(R.id.val2);
-        TextView output = findViewById(R.id.addOutput);
-        output.setText(dataString);
+        TextView output_1 = findViewById(R.id.addOutput);
+        output_1.setText(dataString);
         val_1.setText(val1);
         val_2.setText(val2);
 
